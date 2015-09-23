@@ -1,5 +1,6 @@
 <?php
 echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke Test Application';
+echo "\n";
 
 // List OpenShift Env Variables
 // Or simply use a Superglobal ($_SERVER or $_ENV)
