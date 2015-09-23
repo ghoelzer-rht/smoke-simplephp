@@ -20,8 +20,7 @@ echo 'Connected successfully';
 mysql_select_db($my_database) or die('Could not select database');
 
 // Performing SQL query
-//$query = 'SELECT * FROM sample_table';
-$query = 'show tables';
+$query = 'SELECT * FROM sample_data';
 $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
 // Printing results in HTML
