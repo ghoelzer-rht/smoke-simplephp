@@ -9,7 +9,7 @@ $my_database = $_ENV['MYSQL_DATABASE'];
 $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
 $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
 
-echo "Connecting User: " + $mysql_user + "/" + $mysql_password + " to DB: " + $my_database +"@" + $mysql_service_host+":"$mysql_service_port;
+echo "Connecting User: " + $mysql_user + "/" + $mysql_password + " to DB: " + $my_database + "@" + $mysql_service_host + ":" + $mysql_service_port;
 
 $mysql_host = $mysql_service_host+":"$mysql_service_port;
 
