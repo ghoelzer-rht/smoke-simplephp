@@ -6,17 +6,21 @@ echo "Welcome to the OpenShift 3 Simple PHP and MySQL Smoke Test Application";
 $mysql_user = $_ENV['MYSQL_USER'];
 $mysql_password = $_ENV['MYSQL_PASSWORD'];
 $my_database = $_ENV['MYSQL_DATABASE'];
+$mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
+$mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
 
-echo "Connecting User: " + $mysql_user + "/" + $mysql_password + " to DB: " + $my_database;
+echo "Connecting User: " + $mysql_user + "/" + $mysql_password + " to DB: " + $my_database +"@" + $mysql_service_host+":"$mysql_service_port;
+
+$mysql_host = $mysql_service_host+":"$mysql_service_port;
 
 // Connecting, selecting database
-$link = mysql_connect('mysql_host', 'mysql_user', 'mysql_password')
+$link = mysql_connect($mysql_host, $mysql_user, $mysql_password)
 or die('Could not connect: ' . mysql_error());
 echo 'Connected successfully';
-mysql_select_db('my_database') or die('Could not select database');
+mysql_select_db($my_database) or die('Could not select database');
 
 // Performing SQL query
-$query = 'SELECT * FROM my_table';
+$query = 'SELECT * FROM sample_table';
 $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
 // Printing results in HTML
