@@ -1,5 +1,5 @@
 <?php
-echo "Welcome to the OpenShift 3 Simple PHP and MySQL Smoke Test Application";
+echo "Welcome to the OpenShift 3 Simple PHP and MySQL Smoke Test Application\n";
 
 // List OpenShift Env Variables
 // Or simply use a Superglobal ($_SERVER or $_ENV)
@@ -9,7 +9,7 @@ $my_database = $_ENV['MYSQL_DATABASE'];
 $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
 $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
 
-echo "Connecting User: " + $mysql_user . "/" + $mysql_password . " to DB: " . $my_database . "@" . $mysql_service_host . ":" . $mysql_service_port;
+echo "Connecting User: " + $mysql_user . "/" + $mysql_password . " to DB: " . $my_database . "@" . $mysql_service_host . ":" . $mysql_service_port . "\n";
 
 $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
 
@@ -20,7 +20,8 @@ echo 'Connected successfully';
 mysql_select_db($my_database) or die('Could not select database');
 
 // Performing SQL query
-$query = 'SELECT * FROM sample_table';
+//$query = 'SELECT * FROM sample_table';
+$query = 'show tables';
 $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
 // Printing results in HTML
