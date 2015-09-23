@@ -15,14 +15,20 @@ echo 'Connecting User: ' + $mysql_user . '/' + $mysql_password . ' DB: ' . $my_d
 $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
 
 // Connecting, selecting database
-$link = mysql_connect($mysql_host, $mysql_user, $mysql_password)
-or die('Could not connect: ' . mysql_error());
+$mysqli = new mysqli($mysql_service_host, $mysql_user, $mysql_password, $my_database, $mysql_service_port);
+if ($mysqli->connect_errno) {
+   die('Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+}
+
+//$link = mysql_connect($mysql_host, $mysql_user, $mysql_password)
+//or die('Could not connect: ' . mysql_error());
 echo 'Connected successfully';
-mysql_select_db($my_database) or die('Could not select database');
+//mysql_select_db($my_database) or die('Could not select database');
 
 // Performing SQL query
 $query = 'SELECT * FROM sample_data';
-$result = mysql_query($query) or die('Query failed: ' . mysql_error());
+$result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
+//$result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
 // Printing results in HTML
 echo "<table>\n";
