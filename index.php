@@ -27,7 +27,7 @@ echo 'Connected successfully';
 //mysql_select_db($my_database) or die('Could not select database');
 
 // Performing SQL query
-$query = 'SELECT * FROM sample_data';
+$query = 'SELECT * FROM sample_table';
 $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
 //$result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
