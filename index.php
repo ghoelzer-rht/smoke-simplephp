@@ -1,5 +1,5 @@
 <?php
-echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application';
+echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.001';
 echo "<br />";
 
 // List OpenShift Env Variables
@@ -50,4 +50,3 @@ mysqli_free_result($result);
 // Closing connection
 mysqli_close($mysqli);
 ?>
-
