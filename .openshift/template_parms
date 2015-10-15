@@ -1,0 +1,20 @@
+"parameters": [
+  {
+    "name": "APP_RELEASE",
+    "description": "The Build of Application to Release",
+    "value": "dev-simplephp-0",
+    "required": true
+  },
+  {
+    "name": "TAGGED_IMAGE_RELEASE",
+    "description": "The Tagged Image to Release",
+    "value": "dev-simplephp:dev-simplephp-0",
+    "required": true
+  },
+  {
+    "name": "REPO_IMAGE_RELEASE",
+    "description": "The Tagged Repo Image to Release",
+    "value": "devops-php3tier01/dev-simplephp:dev-simplephp-0",
+    "required": true
+  }
+ ]

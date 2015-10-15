@@ -26,19 +26,6 @@
                 },
                 "triggers": [
                     {
-                        "type": "ImageChange",
-                        "imageChangeParams": {
-                            "automatic": true,
-                            "containerNames": [
-                                "${APP_RELEASE}"
-                            ],
-                            "from": {
-                                "kind": "ImageStreamTag",
-                                "name": "dev-simplephp:${APP_RELEASE}"
-                            }
-                        }
-                    },
-                    {
                         "type": "ConfigChange"
                     }
                 ],
@@ -57,7 +44,7 @@
                     "spec": {
                         "containers": [
                             {
-                                "name": "dev-simplephp",
+                                "name": "${APP_RELEASE}",
                                 "image": "172.30.76.228:5000/devops-php3tier01/dev-simplephp:${APP_RELEASE}",
                                 "ports": [
                                     {
@@ -98,7 +85,7 @@
                 "name": "${APP_RELEASE}",
                 "creationTimestamp": null,
                 "labels": {
-                    "app": "dev-simplephp:${APP_RELEASE}"
+                    "app": "${APP_RELEASE}"
                 },
                 "annotations": {
                     "openshift.io/generatedby": "OpenShiftWebConsole"
@@ -122,37 +109,17 @@
             "status": {
                 "loadBalancer": {}
             }
-        },
-        {
-            "kind": "Route",
-            "apiVersion": "v1",
-            "metadata": {
-                "name": "${APP_RELEASE}",
-                "creationTimestamp": null,
-                "labels": {
-                    "app": "${APP_RELEASE}"
-                },
-                "annotations": {
-                    "openshift.io/generatedby": "OpenShiftWebConsole",
-                    "openshift.io/host.generated": "true"
-                }
-            },
-            "spec": {
-                "host": "${APP_RELEASE}-devops-php3tier01.cloudapps.os1.phx2.redhat.com",
-                "to": {
-                    "kind": "Service",
-                    "name": "${APP_RELEASE}"
-                }
-            },
-            "status": {}
         }
-    ]
-    "parameters": [
-      {
-        "name": "APP_RELEASE",
-        "description": "The Build of Application to Release",
-        "value": "dev-simplephp-0"
-        "required": true
-      }
-     ]
+    ],
+  "parameters": [
+    {
+      "name": "APP_RELEASE",
+      "description": "The Build of Application to Release",
+      "value": "dev-simplephp-0",
+      "required": true
+    }
+  ],
+  "labels": {
+    "template": "php3tier-release-template"
+  }
 }
