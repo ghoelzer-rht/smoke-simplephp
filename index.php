@@ -1,5 +1,5 @@
 <?php
-echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0006';
+echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0038';
 echo "<br />";
 
 // List OpenShift Env Variables
