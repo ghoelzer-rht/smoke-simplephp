@@ -10,10 +10,10 @@
             "kind": "DeploymentConfig",
             "apiVersion": "v1",
             "metadata": {
-                "name": "${APP_RELEASE}",
+                "name": "${APP_RELEASE}-simplephp",
                 "creationTimestamp": null,
                 "labels": {
-                    "app": "${APP_RELEASE}"
+                    "app": "${APP_RELEASE}-simplephp"
                 },
                 "annotations": {
                     "openshift.io/generatedby": "OpenShiftWebConsole"
@@ -25,27 +25,42 @@
                     "resources": {}
                 },
                 "triggers": [
+                  {
+                    "type": "ImageChange",
+                    "imageChangeParams": {
+                      "automatic": true,
+                      "containerNames": [
+                        "${APP_RELEASE}-simplephp"
+                      ],
+                      "from": {
+                        "kind": "ImageStreamTag",
+                        "name": "dev-simplephp:${APP_RELEASE}",
+                        "namespace": "devops-php3tier01"
+                      },
+                      "lastTriggeredImage": ""
+                    }
+                  },
                     {
                         "type": "ConfigChange"
                     }
                 ],
                 "replicas": 1,
                 "selector": {
-                    "deploymentconfig": "${APP_RELEASE}"
+                    "deploymentconfig": "${APP_RELEASE}-simplephp"
                 },
                 "template": {
                     "metadata": {
                         "creationTimestamp": null,
                         "labels": {
-                            "app": "${APP_RELEASE}",
-                            "deploymentconfig": "${APP_RELEASE}"
+                            "app": "${APP_RELEASE}-simplephp",
+                            "deploymentconfig": "${APP_RELEASE}-simplephp"
                         }
                     },
                     "spec": {
                         "containers": [
                             {
-                                "name": "${APP_RELEASE}",
-                                "image": "172.30.76.228:5000/devops-php3tier01/dev-simplephp:${APP_RELEASE}",
+                                "name": "${APP_RELEASE}-simplephp",
+                                "image": "dev-simplephp:${APP_RELEASE}",
                                 "ports": [
                                     {
                                         "containerPort": 8080,
@@ -82,10 +97,10 @@
             "kind": "Service",
             "apiVersion": "v1",
             "metadata": {
-                "name": "${APP_RELEASE}",
+                "name": "${APP_RELEASE}-simplephp",
                 "creationTimestamp": null,
                 "labels": {
-                    "app": "${APP_RELEASE}"
+                    "app": "${APP_RELEASE}-simplephp"
                 },
                 "annotations": {
                     "openshift.io/generatedby": "OpenShiftWebConsole"
@@ -101,7 +116,7 @@
                     }
                 ],
                 "selector": {
-                    "deploymentconfig": "${APP_RELEASE}"
+                    "deploymentconfig": "${APP_RELEASE}-simplephp"
                 },
                 "type": "ClusterIP",
                 "sessionAffinity": "None"
