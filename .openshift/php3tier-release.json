@@ -25,21 +25,6 @@
                     "resources": {}
                 },
                 "triggers": [
-                  {
-                    "type": "ImageChange",
-                    "imageChangeParams": {
-                      "automatic": true,
-                      "containerNames": [
-                        "${APP_RELEASE}-simplephp"
-                      ],
-                      "from": {
-                        "kind": "ImageStreamTag",
-                        "name": "dev-simplephp:${APP_RELEASE}",
-                        "namespace": "devops-php3tier01"
-                      },
-                      "lastTriggeredImage": ""
-                    }
-                  },
                     {
                         "type": "ConfigChange"
                     }
@@ -60,7 +45,7 @@
                         "containers": [
                             {
                                 "name": "${APP_RELEASE}-simplephp",
-                                "image": "dev-simplephp:${APP_RELEASE}",
+                                "image": "172.30.76.228:5000/devops-php3tier01/dev-simplephp@sha256:317878b69709917d4e09a9e4f0ed44dce9ffab375c5c051cd6b853552f0955cc",
                                 "ports": [
                                     {
                                         "containerPort": 8080,

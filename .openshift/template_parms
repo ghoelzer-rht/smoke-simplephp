@@ -18,3 +18,7 @@
     "required": true
   }
  ]
+
+ # oc command to get image of a replication controller:
+ # oc get rc dev-simplephp-9 -t '{{$a:= index .spec.template.spec.containers 0 }}{{$a.image}}'
+ 
