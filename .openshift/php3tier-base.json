@@ -1,0 +1,194 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "php3tier-base",
+        "creationTimestamp": null
+    },
+    "objects": [
+        {
+            "kind": "BuildConfig",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "dev-simplephp",
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "dev-simplephp"
+                },
+                "annotations": {
+                    "openshift.io/generatedby": "OpenShiftWebConsole"
+                }
+            },
+            "spec": {
+                "triggers": [],
+                "source": {
+                    "type": "Git",
+                    "git": {
+                        "uri": "https://github.com/ghoelzer-rht/smoke-simplephp.git",
+                        "ref": "master"
+                    }
+                },
+                "strategy": {
+                    "type": "Source",
+                    "sourceStrategy": {
+                        "from": {
+                            "kind": "ImageStreamTag",
+                            "namespace": "openshift",
+                            "name": "php:5.5"
+                        }
+                    }
+                },
+                "output": {
+                    "to": {
+                        "kind": "ImageStreamTag",
+                        "name": "dev-simplephp:latest"
+                    }
+                },
+                "resources": {}
+            },
+            "status": {
+                "lastVersion": 0
+            }
+        },
+        {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "dev-simplephp",
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "dev-simplephp"
+                },
+                "annotations": {
+                    "openshift.io/generatedby": "OpenShiftWebConsole"
+                }
+            },
+            "spec": {
+                "ports": [
+                    {
+                        "protocol": "TCP",
+                        "port": 8080,
+                        "targetPort": 8080,
+                        "nodePort": 0
+                    }
+                ],
+                "selector": {
+                    "deploymentconfig": "dev-simplephp"
+                },
+                "type": "ClusterIP",
+                "sessionAffinity": "None"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "kind": "DeploymentConfig",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "dev-simplephp",
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "dev-simplephp"
+                },
+                "annotations": {
+                    "openshift.io/generatedby": "OpenShiftWebConsole"
+                }
+            },
+            "spec": {
+                "strategy": {
+                    "type": "Recreate",
+                    "resources": {}
+                },
+                "triggers": [
+                    {
+                        "type": "ImageChange",
+                        "imageChangeParams": {
+                            "automatic": true,
+                            "containerNames": [
+                                "dev-simplephp"
+                            ],
+                            "from": {
+                                "kind": "ImageStreamTag",
+                                "name": "dev-simplephp:latest"
+                            }
+                        }
+                    },
+                    {
+                        "type": "ConfigChange"
+                    }
+                ],
+                "replicas": 1,
+                "selector": {
+                    "deploymentconfig": "dev-simplephp"
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "dev-simplephp",
+                            "deploymentconfig": "dev-simplephp"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "name": "dev-simplephp",
+                                "image": "172.30.76.228:5000/devops-php3tier01/dev-simplephp@sha256:4e1fe1aad8f05f1d120e82696cefc61707ef0fb4c0e20463176960516b27a297",
+                                "ports": [
+                                    {
+                                        "containerPort": 8080,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "env": [
+                                    {
+                                        "name": "MYSQL_USER",
+                                        "value": "gregh"
+                                    },
+                                    {
+                                        "name": "MYSQL_PASSWORD",
+                                        "value": "redhat"
+                                    },
+                                    {
+                                        "name": "MYSQL_DATABASE",
+                                        "value": "sampledb"
+                                    }
+                                ],
+                                "resources": {},
+                                "terminationMessagePath": "/dev/termination-log",
+                                "imagePullPolicy": "Always"
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "dnsPolicy": "ClusterFirst"
+                    }
+                }
+            },
+            "status": {}
+        },
+        {
+            "kind": "Route",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "dev-simplephp",
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "dev-simplephp"
+                },
+                "annotations": {
+                    "openshift.io/generatedby": "OpenShiftWebConsole",
+                    "openshift.io/host.generated": "true"
+                }
+            },
+            "spec": {
+                "host": "dev-simplephp-devops-php3tier01.cloudapps.os1.phx2.redhat.com",
+                "to": {
+                    "kind": "Service",
+                    "name": "dev-simplephp"
+                }
+            },
+            "status": {}
+        }
+    ]
+}
