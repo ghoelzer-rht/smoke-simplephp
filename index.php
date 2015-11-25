@@ -3,7 +3,7 @@
 <meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
 
 <?php
-echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0027';
+echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0030';
 echo "<br />";
 echo "<br />";
 // List OpenShift Env Variables
