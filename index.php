@@ -3,12 +3,8 @@
 <meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
 
 <?php
-// Initialize the session.
-session_start();
-// Unset all of the session variables.
-$_SESSION = array();
 
-echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0031';
+echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0032';
 echo "<br />";
 echo "<br />";
 // List OpenShift Env Variables
@@ -18,8 +14,7 @@ $mysql_password = $_ENV['MYSQL_PASSWORD'];
 $my_database = $_ENV['MYSQL_DATABASE'];
 $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
 $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
-$MachineName = getenv("HOSTNAME");
-//$MachineName = $_ENV["HOSTNAME"];
+$MachineName = $_ENV["HOSTNAME"];
 
 echo 'Running in Pod/Container: ' . $MachineName;
 echo "<br />";
@@ -62,7 +57,4 @@ mysqli_free_result($result);
 
 // Closing connection
 mysqli_close($mysqli);
-
-// Finally, destroy the session.
-session_destroy();
 ?>
