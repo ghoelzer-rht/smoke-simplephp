@@ -128,6 +128,7 @@
                     $query = 'SELECT * FROM sample_table';
                     $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
                     $result->data_seek(0);
+                  ?>
                   <div class="row">
                     <div class="col-xs-6">
                       echo "<table>\n";
