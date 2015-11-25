@@ -14,6 +14,7 @@ $MachineName = $_ENV["HOSTNAME"];
 echo 'Running in Pod/Container: ' . $MachineName;
 echo "<br />";
 echo "<br />";
+unset($MachineName);
 
 echo 'Connecting User: ' . $mysql_user . '/' . $mysql_password . ' DB: ' . $my_database . '@' . $mysql_service_host . ':' . $mysql_service_port;
 echo "<br />";
