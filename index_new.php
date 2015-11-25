@@ -58,7 +58,7 @@
 </br>
 <!-- row -->
 <div class="row">
-<div class="col-lg-4"><div class="panel panel-primary">  <div class="panel-heading">
+<div class="col-lg-6"><div class="panel panel-primary">  <div class="panel-heading">
     <h3 class="panel-title">Sample MySQL Details</h3>
   </div><div class="panel-body">
  <div class="panel panel-danger">
