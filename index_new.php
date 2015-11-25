@@ -64,10 +64,10 @@
  <div class="panel panel-danger">
               <div class="panel-heading">
                 <div class="row">
-                  <div class="col-xs-5">
+                  <div class="col-xs-6">
                  <span class="glyphicon glyphicon-book"></span>
                   </div>
-                  <div class="col-xs-5 text-right">
+                  <div class="col-xs-6 text-right">
                     <p class="announcement-heading"><?php echo "$colnr" ?></p>
                     <p class="announcement-text">Connection Details</p>
                   </div>
@@ -82,17 +82,17 @@
                 ?>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
-                    <div class="col-xs-5">
+                    <div class="col-xs-6">
                       <?php
                         echo $mysql_user . '@' . $mysql_service_host . ':' . $mysql_service_port;
                       ?>
                     </div>
-                    <div class="col-xs-5 text-right">
+                    <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-5">
+                    <div class="col-xs-6">
                       <?php
                         echo 'Database: ' . $my_database;
                         $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
@@ -104,7 +104,7 @@
                         echo ' successfully connected';
                       ?>
                     </div>
-                    <div class="col-xs-5 text-right">
+                    <div class="col-xs-6 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
                     </div>
                   </div>
@@ -113,10 +113,10 @@
 <div class="panel panel-warning">
               <div class="panel-heading">
                 <div class="row">
-                  <div class="col-xs-5">
+                  <div class="col-xs-6">
                  <span class="glyphicon glyphicon-eye-open"></span>
                   </div>
-                  <div class="col-xs-5 text-right">
+                  <div class="col-xs-6 text-right">
                     <p class="announcement-heading"></p>
                     <p class="announcement-text">Sample Table Data</p>
                   </div>
@@ -129,7 +129,7 @@
                     $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
                     $result->data_seek(0);
                     echo '<div class="row">';
-                    echo '<div class="col-xs-5">';
+                    echo '<div class="col-xs-6">';
                       echo "<table>\n";
                       while ($line = $result->fetch_assoc()) {
                         echo "\t<tr>\n";
@@ -140,7 +140,7 @@
                       }
                       echo "</table>\n";
                     echo '</div>';
-                    echo '<div class="col-xs-5 text-right">';
+                    echo '<div class="col-xs-6 text-right">';
                       echo '<i class="fa fa-arrow-circle-right"></i>';
                       echo '</div>';
                     echo '</div>';
