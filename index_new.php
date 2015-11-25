@@ -128,9 +128,8 @@
                     $query = 'SELECT * FROM sample_table';
                     $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
                     $result->data_seek(0);
-                  ?>
-                  <div class="row">
-                    <div class="col-xs-6">
+                    echo '<div class="row">';
+                    echo '<div class="col-xs-6">';
                       echo "<table>\n";
                       while ($line = $result->fetch_assoc()) {
                         echo "\t<tr>\n";
@@ -140,11 +139,11 @@
                         echo "\t</tr>\n";
                       }
                       echo "</table>\n";
-                    </div>
-                    <div class="col-xs-6 text-right">
-                      <i class="fa fa-arrow-circle-right"></i>
-                    </div>
-                  </div>
+                    echo '</div>';
+                    echo '<div class="col-xs-6 text-right">';
+                      echo '<i class="fa fa-arrow-circle-right"></i>';
+                      echo '</div>';
+                    echo '</div>';
                     // Free resultset
                     mysqli_free_result($result);
                     // Closing connection
