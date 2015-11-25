@@ -1,7 +1,7 @@
 <?php
 echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0027';
 echo "<br />";
-
+echo "<br />";
 // List OpenShift Env Variables
 // Or simply use a Superglobal ($_SERVER or $_ENV)
 $mysql_user = $_ENV['MYSQL_USER'];
@@ -11,7 +11,7 @@ $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
 $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
 $MachineName = $_ENV["HOSTNAME"];
 
-echo 'Running in Pod/Container -' . $MachineName;
+echo 'Running in Pod/Container: ' . $MachineName;
 echo "<br />";
 echo "<br />";
 
@@ -26,15 +26,13 @@ if ($mysqli->connect_errno) {
    die('Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
 
-//$link = mysql_connect($mysql_host, $mysql_user, $mysql_password)
-//or die('Could not connect: ' . mysql_error());
 echo 'Connected successfully';
-//mysql_select_db($my_database) or die('Could not select database');
+echo "<br />";
+echo "<br />";
 
 // Performing SQL query
 $query = 'SELECT * FROM sample_table';
 $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
-//$result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
 // Printing results in HTML
 echo "<table>\n";
