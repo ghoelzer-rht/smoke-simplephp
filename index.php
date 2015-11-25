@@ -8,7 +8,7 @@ session_start();
 // Unset all of the session variables.
 $_SESSION = array();
 
-echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0030';
+echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0031';
 echo "<br />";
 echo "<br />";
 // List OpenShift Env Variables
