@@ -3,6 +3,11 @@
 <meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
 
 <?php
+// Initialize the session.
+session_start();
+// Unset all of the session variables.
+$_SESSION = array();
+
 echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0030';
 echo "<br />";
 echo "<br />";
@@ -56,4 +61,7 @@ mysqli_free_result($result);
 
 // Closing connection
 mysqli_close($mysqli);
+
+// Finally, destroy the session.
+session_destroy();
 ?>
