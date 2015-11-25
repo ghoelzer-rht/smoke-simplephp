@@ -92,7 +92,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-7">
                       <?php
                         echo 'Database: ' . $my_database;
                         $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
@@ -104,7 +104,7 @@
                         echo ' successfully connected';
                       ?>
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-7 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
                     </div>
                   </div>
