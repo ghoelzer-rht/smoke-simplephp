@@ -1,5 +1,5 @@
 <?php
-echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0026';
+echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0027';
 echo "<br />";
 
 // List OpenShift Env Variables
@@ -9,6 +9,11 @@ $mysql_password = $_ENV['MYSQL_PASSWORD'];
 $my_database = $_ENV['MYSQL_DATABASE'];
 $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
 $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
+$MachineName = $_ENV["HOSTNAME"];
+
+echo 'Running in Pod/Container -' . $MachineName;
+echo "<br />";
+echo "<br />";
 
 echo 'Connecting User: ' . $mysql_user . '/' . $mysql_password . ' DB: ' . $my_database . '@' . $mysql_service_host . ':' . $mysql_service_port;
 echo "<br />";
