@@ -82,12 +82,12 @@
                 ?>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-7">
                       <?php
                         echo $mysql_user . '@' . $mysql_service_host . ':' . $mysql_service_port;
                       ?>
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-7 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
                     </div>
                   </div>
