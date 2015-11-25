@@ -18,6 +18,7 @@ $mysql_password = $_ENV['MYSQL_PASSWORD'];
 $my_database = $_ENV['MYSQL_DATABASE'];
 $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
 $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
+$MachineName = '';
 $MachineName = $_ENV["HOSTNAME"];
 
 echo 'Running in Pod/Container: ' . $MachineName;
