@@ -58,16 +58,16 @@
 </br>
 <!-- row -->
 <div class="row">
-<div class="col-lg-6"><div class="panel panel-primary">  <div class="panel-heading">
+<div class="col-lg-3"><div class="panel panel-primary">  <div class="panel-heading">
     <h3 class="panel-title">Sample MySQL Details</h3>
   </div><div class="panel-body">
  <div class="panel panel-danger">
               <div class="panel-heading">
                 <div class="row">
-                  <div class="col-xs-6">
+                  <div class="col-xs-4">
                  <span class="glyphicon glyphicon-book"></span>
                   </div>
-                  <div class="col-xs-6 text-right">
+                  <div class="col-xs-4 text-right">
                     <p class="announcement-heading"><?php echo "$colnr" ?></p>
                     <p class="announcement-text">Connection Details</p>
                   </div>
@@ -82,17 +82,17 @@
                 ?>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-4">
                       <?php
                         echo $mysql_user . '@' . $mysql_service_host . ':' . $mysql_service_port;
                       ?>
                     </div>
-                    <div class="col-xs-6 text-right">
+                    <div class="col-xs-4 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-7">
+                    <div class="col-xs-5">
                       <?php
                         echo 'Database: ' . $my_database;
                         $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
@@ -104,7 +104,7 @@
                         echo ' successfully connected';
                       ?>
                     </div>
-                    <div class="col-xs-7 text-right">
+                    <div class="col-xs-5 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
                     </div>
                   </div>
@@ -113,10 +113,10 @@
 <div class="panel panel-warning">
               <div class="panel-heading">
                 <div class="row">
-                  <div class="col-xs-6">
+                  <div class="col-xs-4">
                  <span class="glyphicon glyphicon-eye-open"></span>
                   </div>
-                  <div class="col-xs-6 text-right">
+                  <div class="col-xs-4 text-right">
                     <p class="announcement-heading"></p>
                     <p class="announcement-text">Sample Table Data</p>
                   </div>
@@ -140,7 +140,7 @@
                       }
                       echo "</table>\n";
                     echo '</div>';
-                    echo '<div class="col-xs-6 text-right">';
+                    echo '<div class="col-xs-4 text-right">';
                       echo '<i class="fa fa-arrow-circle-right"></i>';
                       echo '</div>';
                     echo '</div>';
