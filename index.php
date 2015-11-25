@@ -1,3 +1,7 @@
+<meta http-equiv="cache-control" content="no-cache"> <!-- tells browser not to cache -->
+<meta http-equiv="expires" content="0"> <!-- says that the cache expires 'now' -->
+<meta http-equiv="pragma" content="no-cache"> <!-- says not to use cached stuff, if there is any -->
+
 <?php
 echo 'Welcome to the OpenShift 3 Simple PHP and MySQL Smoke DevOps Sample Application v1.0027';
 echo "<br />";
@@ -14,7 +18,6 @@ $MachineName = $_ENV["HOSTNAME"];
 echo 'Running in Pod/Container: ' . $MachineName;
 echo "<br />";
 echo "<br />";
-unset($MachineName);
 
 echo 'Connecting User: ' . $mysql_user . '/' . $mysql_password . ' DB: ' . $my_database . '@' . $mysql_service_host . ':' . $mysql_service_port;
 echo "<br />";
