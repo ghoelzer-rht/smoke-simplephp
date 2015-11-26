@@ -55,7 +55,7 @@
 </br>
 <!-- row -->
 <div class="row">
-<div class="col-lg-4"><div class="panel panel-primary">  <div class="panel-heading">
+<div class="col-xs-4"><div class="panel panel-primary">  <div class="panel-heading">
     <h3 class="panel-title">Sample MySQL Details</h3>
   </div><div class="panel-body" style="min-height: 15; max-height: 20;">
  <div class="panel panel-danger">
