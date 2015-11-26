@@ -38,7 +38,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">ver 1.0032</a></li>
+            <li class="active"><a href="#">ver 1.0033</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -55,9 +55,9 @@
 </br>
 <!-- row -->
 <div class="row">
-<div class="col-xs-4"><div class="panel panel-primary">  <div class="panel-heading">
+<div class="col-lg-4"><div class="panel">  <div class="panel-heading">
     <h3 class="panel-title">Sample MySQL Details</h3>
-  </div><div class="panel-body" style="min-height: 15; max-height: 20;">
+  </div><div class="panel-body">
  <div class="panel panel-danger">
               <div class="panel-heading">
                 <div class="row">
