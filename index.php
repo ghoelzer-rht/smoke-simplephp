@@ -38,7 +38,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">ver 1.0033</a></li>
+            <li class="active"><a href="#">ver 1.0034</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -47,7 +47,7 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>OpenShift POD</h1>
+        <h3>OpenShift POD</h3>
       <?php
         $MachineName = $_ENV["HOSTNAME"];
         echo '<p class="lead">' . $MachineName . '</p>';
