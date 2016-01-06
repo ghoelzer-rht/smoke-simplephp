@@ -49,7 +49,8 @@
       <div class="starter-template">
         <h3>OpenShift POD</h3>
       <?php
-        $MachineName = $_ENV["HOSTNAME"];
+        #$MachineName = $_ENV["HOSTNAME"];
+        $MachineName = getenv(HOSTNAME);
         echo '<p class="lead">' . $MachineName . '</p>';
       ?>
 </br>
@@ -71,11 +72,11 @@
                 </div>
               </div>
                 <?php
-                  $mysql_user = $_ENV['MYSQL_USER'];
-                  $mysql_password = $_ENV['MYSQL_PASSWORD'];
-                  $my_database = $_ENV['MYSQL_DATABASE'];
-                  $mysql_service_host = $_ENV['MYSQL_SERVICE_HOST'];
-                  $mysql_service_port = $_ENV['MYSQL_SERVICE_PORT'];
+                  $mysql_user = getenv(MYSQL_USER);
+                  $mysql_password = getenv(MYSQL_PASSWORD);
+                  $my_database = getenv(MYSQL_DATABASE);
+                  $mysql_service_host = getenv(MYSQL_SERVICE_HOST);
+                  $mysql_service_port = getenv(MYSQL_SERVICE_PORT);
                 ?>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
