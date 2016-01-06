@@ -49,7 +49,8 @@
       <div class="starter-template">
         <h3>OpenShift POD</h3>
       <?php
-        $MachineName = $_ENV["HOSTNAME"];
+        #$MachineName = $_ENV["HOSTNAME"];
+        $MachineName = getenv(HOSTNAME);
         echo '<p class="lead">' . $MachineName . '</p>';
       ?>
 </br>
