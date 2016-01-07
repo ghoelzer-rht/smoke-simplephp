@@ -38,7 +38,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">ver 1.0050</a></li>
+            <li class="active"><a href="#">ver 1.0051</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
