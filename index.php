@@ -125,6 +125,7 @@
               <div class="panel-footer announcement-bottom">
                   <?php
                     // Performing SQL query
+                    if ($mysql_connected = 'true') {
                     $query = 'SELECT * FROM sample_table';
                     $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
                     $result->data_seek(0);
@@ -148,6 +149,7 @@
                     mysqli_free_result($result);
                     // Closing connection
                     mysqli_close($mysqli);
+                    }
                   ?>
                 </div>
             </div>
