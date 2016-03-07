@@ -95,8 +95,10 @@
                         echo 'Database: ' . $my_database;
                         $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
                         // Connecting, selecting database
+                        $mysql_connected = 'true';
                         $mysqli = new mysqli($mysql_service_host, $mysql_user, $mysql_password, $my_database, $mysql_service_port);
                         if ($mysqli->connect_errno) {
+                           $mysql_connected = 'false';
                            die('Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
                         }
                         echo ' successfully connected';
