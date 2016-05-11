@@ -77,7 +77,7 @@
                   $my_database = getenv(MYSQL_DATABASE);
                   $mysql_service_host = getenv(MYSQL_SERVICE_HOST);
                   $mysql_service_port = getenv(MYSQL_SERVICE_PORT);
-                // old php block end
+                ?>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-7">
@@ -91,7 +91,7 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-7">
-                      // old php block start
+                      <?php
                         echo 'Database: ' . $my_database;
                         $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
                         // Connecting, selecting database
@@ -100,7 +100,7 @@
                            die('Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
                         }
                         echo ' successfully connected';
-                ?>
+                      ?>
                     </div>
                     <div class="col-xs-7 text-right">
                       <i class="fa fa-arrow-circle-right"></i>
