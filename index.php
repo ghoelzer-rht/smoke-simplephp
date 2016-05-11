@@ -73,16 +73,25 @@
               </div>
                 <?php
                   $mysql_user = getenv(MYSQL_USER);
-                  $mysql_password = getenv(MYSQL_PASSWORD);
-                  $my_database = getenv(MYSQL_DATABASE);
-                  $mysql_service_host = getenv(MYSQL_SERVICE_HOST);
-                  $mysql_service_port = getenv(MYSQL_SERVICE_PORT);
+                  if (strlen($mysql_user) > 0) {
+                    $mysql_specified = "true";
+                    $mysql_password = getenv(MYSQL_PASSWORD);
+                    $my_database = getenv(MYSQL_DATABASE);
+                    $mysql_service_host = getenv(MYSQL_SERVICE_HOST);
+                    $mysql_service_port = getenv(MYSQL_SERVICE_PORT);
+                  } else {
+                    $mysql_specified = "false";
+                  }
                 ?>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-7">
                       <?php
-                        echo $mysql_user . '@' . $mysql_service_host . ':' . $mysql_service_port;
+                        if ($mysql_specified == "true") {
+                          echo $mysql_user . '@' . $mysql_service_host . ':' . $mysql_service_port;
+                        } else {
+                          echo "MySQL POD/Connection not Specified";
+                        }
                       ?>
                     </div>
                     <div class="col-xs-7 text-right">
@@ -92,6 +101,7 @@
                   <div class="row">
                     <div class="col-xs-7">
                       <?php
+                      if ($mysql_specified == "true") {
                         echo 'Database: ' . $my_database;
                         $mysql_host = $mysql_service_host . ":" . $mysql_service_port;
                         // Connecting, selecting database
@@ -100,6 +110,7 @@
                            die('Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
                         }
                         echo ' successfully connected';
+                      }
                       ?>
                     </div>
                     <div class="col-xs-7 text-right">
@@ -122,6 +133,7 @@
               </div>
               <div class="panel-footer announcement-bottom">
                   <?php
+                  if ($mysql_specified == "true") {
                     // Performing SQL query
                     $query = 'SELECT * FROM sample_table';
                     $result = $mysqli->query($query) or die('Query failed: ' . $mysqli->error);
@@ -146,6 +158,7 @@
                     mysqli_free_result($result);
                     // Closing connection
                     mysqli_close($mysqli);
+                  }
                   ?>
                 </div>
             </div>
