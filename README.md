@@ -10,6 +10,7 @@ $ oc new-app -e MYSQL_USER='app_user',MYSQL_PASSWORD='password',MYSQL_DATABASE=s
 Get into the mysql pod (wait until you see it created in Web Console)
 
 $ oc rsh $(oc get pods | grep mysql | grep Running | awk '{print $1}')    # rsh will ssh into the mysql pod
+
 $ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE
 
 Create sample_table in sampledb, and add some data
