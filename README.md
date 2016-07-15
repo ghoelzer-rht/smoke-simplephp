@@ -27,7 +27,7 @@ INSERT INTO `sample_table` VALUES (3,'3rd data item');
 
 Exit MySQL and Pod
 
-3) Update the PHP Application DeploymentConfig by adding the following Environment variables to the Container Definition (see below)
+3) Update the PHP Application DeploymentConfig by adding the following Environment variables to the Container Definition (see below), easiest to cut from MySQL DeploymentConfig YAML and then past to PHP Application DeploymentConfig YAML in Web Console
 
           env:
             -
