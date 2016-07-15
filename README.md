@@ -1,7 +1,30 @@
 Smoke test application for use in the OpenShift 3 Roadshow, adapted for use with Jenkins CI/CD demo using persistent storage for Jenkins and MySQL.
 
-Notes/Thoughts on current DevOps Lifecycle strategies being tested and technical implementations and ideas:
+PHP App is still functional with out MySQL configured, and displays "User Friendly" message to that effect.  During demo, I typically use the following sequence:
 
-Used git pre-push hook and curl command to trigger Jenkins build with parameters (see .git/hooks).
-Updated OSE buildConfig to be only manually triggered, leaving anything else seemed to cause two builds to be triggered after initial Jenkins builed triggered with git pre-push hook.
-Experimented with "oc tag" command, but didn't work as expected, tags always point to ":latest" image.  Found command to pull back full image name by ReplicationController id, which is tied to a specific build/deployment.  Experimented with template using the full image reference, and was successfully able to create new app from a specific build.  Will attempt to leverage this to automate the creation of a new "release candidate" for testing after successful build and unit test.  Then use this to update "live/production" app DeploymentConfig when "release candidate" has been successfully tested and is to be promoted.
+1) Create Sample/Demo Project, and PHP Application from the OpenShift Web Console
+2) Once Builde\/Deployment Complete, create the MySQL Backend via oc CLI (See Below)
+
+$ oc new-app -e MYSQL_USER='app_user',\
+MYSQL_PASSWORD='password',\
+MYSQL_DATABASE=sampledb\
+ registry.access.redhat.com/openshift3/mysql-55-rhel7 --name='mysql'
+
+Get into the mysql pod (wait until you see it created in Web Console)
+
+$ oc rsh $(oc get pods | grep mysql | grep Running | awk '{print $1}')    # rsh will ssh into the mysql pod
+$ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE
+
+Create sample_table in sampledb, and add some data
+
+CREATE TABLE `sample_table` (
+  `key_value` int(11) NOT NULL AUTO_INCREMENT,
+  `data_value` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`key_value`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `sample_table` VALUES (1,'1st data item');
+INSERT INTO `sample_table` VALUES (2,'2nd data item');
+INSERT INTO `sample_table` VALUES (3,'3rd data item');
+
+Exit MySQL and Pod
