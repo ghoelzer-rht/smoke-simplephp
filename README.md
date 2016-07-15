@@ -4,15 +4,15 @@ PHP App is still functional with out MySQL configured, and displays "User Friend
 
 1) Create Sample/Demo Project, and PHP Application from the OpenShift Web Console
 
-2) Once Builde\/Deployment Complete, create the MySQL Backend via oc CLI (See Below)
+2) Once Build abd Deployment Complete, create the MySQL Backend via oc CLI (See Below)
 
 **$ oc new-app -e MYSQL_USER='app_user',MYSQL_PASSWORD='password',MYSQL_DATABASE=sampledb registry.access.redhat.com/openshift3/mysql-55-rhel7 --name='mysql'**
 
 Get into the mysql pod (wait until you see it created in Web Console)
 
-$ oc rsh $(oc get pods | grep mysql | grep Running | awk '{print $1}')    # rsh will ssh into the mysql pod
+**$ oc rsh $(oc get pods | grep mysql | grep Running | awk '{print $1}')    # rsh will ssh into the mysql pod**
 
-$ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE
+**$ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE**
 
 Create sample_table in sampledb, and add some data
 
@@ -26,7 +26,7 @@ INSERT INTO `sample_table` VALUES (1,'1st data item');
 INSERT INTO `sample_table` VALUES (2,'2nd data item');
 INSERT INTO `sample_table` VALUES (3,'3rd data item');
 
-Exit MySQL and Pod
+**Exit MySQL and Pod**
 
 3) Update the PHP Application DeploymentConfig by adding the following Environment variables to the Container Definition (see below), easiest to cut from MySQL DeploymentConfig YAML and then past to PHP Application DeploymentConfig YAML in Web Console
 
