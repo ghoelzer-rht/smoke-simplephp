@@ -26,3 +26,16 @@ INSERT INTO `sample_table` VALUES (2,'2nd data item');
 INSERT INTO `sample_table` VALUES (3,'3rd data item');
 
 Exit MySQL and Pod
+
+3) Update the PHP Application DeploymentConfig by adding the following Environment variables to the Container Definition (see below)
+
+          env:
+            -
+              name: MYSQL_DATABASE
+              value: sampledb
+            -
+              name: MYSQL_PASSWORD
+              value: password
+            -
+              name: MYSQL_USER
+              value: app_user
