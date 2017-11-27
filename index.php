@@ -47,7 +47,7 @@
     <div class="container">
 
       <div class="starter-template">
-        <h3>OpenShift POD</h3>
+        <h3>OpenShift POD at BBY</h3>
       <?php
         #$MachineName = $_ENV["HOSTNAME"];
         $MachineName = getenv(HOSTNAME);
