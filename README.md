@@ -6,7 +6,7 @@ PHP App is still functional with out MySQL configured, and displays "User Friend
 
 2) Once Build abd Deployment Complete, create the MySQL Backend via oc CLI (See Below)
 
-**$ oc new-app -e MYSQL_USER='app_user' -e MYSQL_PASSWORD='password' -e MYSQL_DATABASE=sampledb registry.access.redhat.com/openshift3/mysql-55-rhel7 --name=mysql**
+**$ oc new-app -e MYSQL_USER=app_user -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=sampledb registry.access.redhat.com/openshift3/mysql-55-rhel7 --name=mysql**
 
 Get into the mysql pod (wait until you see it created in Web Console)
 
