@@ -1,4 +1,4 @@
-Smoke test application for use in the OpenShift 3 Roadshow, adapted for use with Jenkins CI/CD demo using persistent storage for Jenkins and MySQL.
+-Smoke test application for use in the OpenShift 3 Roadshow, adapted for use with Jenkins CI/CD demo using persistent storage for Jenkins and MySQL.
 
 PHP App is still functional with out MySQL configured, and displays "User Friendly" message to that effect.  During demo, I typically use the following sequence:
 
@@ -22,10 +22,11 @@ CREATE TABLE `sample_table` (
   PRIMARY KEY (`key_value`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 ```
-
+```bash
 INSERT INTO `sample_table` VALUES (1,'1st data item');
 INSERT INTO `sample_table` VALUES (2,'2nd data item');
 INSERT INTO `sample_table` VALUES (3,'3rd data item');
+```
 
 **Exit MySQL and Pod**
 
