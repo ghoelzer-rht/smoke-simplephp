@@ -15,12 +15,13 @@ Get into the mysql pod (wait until you see it created in Web Console)
 **$ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE**
 
 Create sample_table in sampledb, and add some data
-
+```bash
 CREATE TABLE `sample_table` (
   `key_value` int(11) NOT NULL AUTO_INCREMENT,
   `data_value` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`key_value`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+```
 
 INSERT INTO `sample_table` VALUES (1,'1st data item');
 INSERT INTO `sample_table` VALUES (2,'2nd data item');
