@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -47,7 +47,7 @@
     <div class="container">
 
       <div class="starter-template">
-        <h3>OpenShift POD</h3>
+        <h3>OpenShift POD - Webhook Test 1</h3>
       <?php
         #$MachineName = $_ENV["HOSTNAME"];
         $MachineName = getenv(HOSTNAME);
