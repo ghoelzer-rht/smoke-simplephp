@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -38,7 +38,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">ver 1.0090</a></li>
+            <li class="active"><a href="#">ver 1.1000</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
